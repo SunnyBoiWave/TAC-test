@@ -2,7 +2,7 @@
     "name": "tic-tac-toe-react",
     "version": "0.1.0",
     "private": true,
-    "homepage":,
+    //"homepage":// 
     "dependencies": {
       "@testing-library/jest-dom": "^5.17.0",
       "@testing-library/react": "^13.4.0",
@@ -41,4 +41,31 @@
     "devDependencies": {
       "gh-pages": "^6.0.0"
     }
+
+    public int putX(){
+      for(int i=0; i<3;i++)
+       for(int j = 0;j<3;j++) {
+          if(position[i][j]==' ') {
+            position[i][j]='X';
+            return 0;
+          }
+       }
+       return -1; 
+      }
+      
+      Point[] list = new Point[9]; // maximum 9 points
+      int size = 0;
+      
+      for(int i = 0; i < 3; i++) {
+          for(int j = 0; j < 3; j++) {
+              if(position[i][j] == ' ') {
+                  list[size] = new Point(i, j);
+                  size++;
+              }
+          }
+      }
+      
+      int index = (int) (Math.random() * (size+1));
+      position[list[index].getX()][list[index].getY()] = 'X';
+
   }
